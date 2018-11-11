@@ -13,6 +13,7 @@ export class MembersComponent implements OnInit {
   ngOnInit() {
     this.dataService.getCustomers().subscribe((customers: ICustomer[]) => {
       this.customers = customers;
+      console.log(customers);
     });
    
   }

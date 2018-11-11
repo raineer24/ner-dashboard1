@@ -8,7 +8,7 @@ import { ICustomer } from '../../shared/interfaces';
 
 @Injectable()
 export class DataService {
-    customersBaseUrl = '/api/customers';
+    customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
 
     constructor(private http: HttpClient) { }
 
