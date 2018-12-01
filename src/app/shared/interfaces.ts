@@ -8,8 +8,7 @@ export interface ICustomer {
     gender: string;
     address: string;
     city: string;
-    //state: IState;
-    //orders?: IOrder[];
+   
     orderTotal?: number;
     latitude?: number;
     longitude?: number;

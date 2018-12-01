@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules, NoPreloading } from '@angular/router';
 
-import { PreloadModulesStrategy } from './core/strategies/preload-modules.strategy';
+//import { PreloadModulesStrategy } from './core/strategies/preload-modules.strategy';
 
 const app_routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/members' },

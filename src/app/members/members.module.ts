@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MembersRoutingModule } from './members-routing.module';
-
+import { CommonModule } from "@angular/common";
 @NgModule({
-    imports: [MembersRoutingModule],
+    imports: [MembersRoutingModule, CommonModule],
     declarations: [MembersRoutingModule.components]
 })
 export class MembersModule { }

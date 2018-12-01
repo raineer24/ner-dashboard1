@@ -11,10 +11,11 @@ export class MembersComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getCustomers().subscribe((customers: ICustomer[]) => {
-      this.customers = customers;
-      console.log(customers);
-    });
+    console.log(typeof this.customers);
+    this.dataService.getCustomers().subscribe((icustomers) => {
+      this.customers = icustomers;
+      console.log(icustomers);
+       });
    
   }
 
