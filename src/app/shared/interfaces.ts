@@ -6,10 +6,15 @@ export interface ICustomer {
     firstName: string;
     lastName: string;
     gender: string;
-    address: string;
-    city: string;
    
-    orderTotal?: number;
-    latitude?: number;
-    longitude?: number;
+}
+
+export interface ICustomers{
+    customers: Array<ICustomer>
+ }
+ 
+
+export interface IUserLogin {
+    email: string;
+    password: string;
 }

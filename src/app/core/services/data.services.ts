@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -12,18 +12,25 @@ export class DataService {
 
     constructor(private http: HttpClient) { }
 
+    
+
     getCustomers(): Observable<ICustomer[]> {
 
         
         return this.http.get<ICustomer[]>(this.customersBaseUrl)
         .pipe(
             map(customers => {
-                return customers;
+               return customers;
             }),
             catchError(this.handleError)
         )
             
     }
+
+    /** POST: add a new hero to the database */
+addCustomer (customer: ICustomer): Observable<ICustomer> {
+    return this.http.post<ICustomer>(this.customersBaseUrl, customer)
+  }
 
     private handleError(error: HttpErrorResponse) {
         console.error('server error:', error);
@@ -35,6 +42,12 @@ export class DataService {
         }
         return Observable.throw(error || 'Node.js server error');
     }
+
+    
+
+
+
+   
 
     
 }
