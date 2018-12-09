@@ -9,7 +9,8 @@ import { ICustomer } from '../../shared/interfaces';
 @Injectable()
 export class DataService {
     customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
-
+    url = "/api/customers";
+    
     constructor(private http: HttpClient) { }
 
     
@@ -17,7 +18,7 @@ export class DataService {
     getCustomers(): Observable<ICustomer[]> {
 
         
-        return this.http.get<ICustomer[]>(this.customersBaseUrl)
+        return this.http.get<ICustomer[]>(this.url)
         .pipe(
             map(customers => {
                return customers;
