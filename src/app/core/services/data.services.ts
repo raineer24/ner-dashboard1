@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -28,9 +28,31 @@ export class DataService {
             
     }
 
+    createCustomer(customer: ICustomer): Observable<ICustomer> {
+        let httpHeaders = new HttpHeaders()
+            .set('Content-Type', 'application/json');
+        let options = {
+            headers: httpHeaders
+        };
+        return this.http.post<ICustomer>(this.url, customer, options);
+    }
+
     /** POST: add a new hero to the database */
 addCustomer (customer: ICustomer): Observable<ICustomer> {
     return this.http.post<ICustomer>(this.customersBaseUrl, customer)
+  }
+
+  postCustomer(customer: ICustomer): Observable<HttpResponse<ICustomer>> {
+    let httpHeaders = new HttpHeaders({
+        'Content-Type' : 'application/json'
+    });
+    return this.http.post<ICustomer>(this.url, customer, {
+        
+            headers: httpHeaders,
+            observe: 'response'
+        }
+    );
+    
   }
 
     private handleError(error: HttpErrorResponse) {
