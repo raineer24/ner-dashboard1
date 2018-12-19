@@ -8,6 +8,7 @@ import { ICustomer } from '../../shared/interfaces';
 
 @Injectable()
 export class DataService {
+    loginObject: ICustomer;
     customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
     url = "/api/customers";
     
@@ -21,12 +22,16 @@ export class DataService {
         return this.http.get<ICustomer[]>(this.url)
         .pipe(
             map(customers => {
+               const user = localStorage.setItem('customers', JSON.stringify(customers));
+               console.log(user);
                return customers;
             }),
             catchError(this.handleError)
         )
             
     }
+
+   
 
     createCustomer(customer: ICustomer): Observable<ICustomer> {
         let httpHeaders = new HttpHeaders()
@@ -37,10 +42,9 @@ export class DataService {
         return this.http.post<ICustomer>(this.url, customer, options);
     }
 
-    /** POST: add a new hero to the database */
-addCustomer (customer: ICustomer): Observable<ICustomer> {
-    return this.http.post<ICustomer>(this.customersBaseUrl, customer)
-  }
+    
+
+
 
   postCustomer(customer: ICustomer): Observable<HttpResponse<ICustomer>> {
     let httpHeaders = new HttpHeaders({
@@ -51,7 +55,8 @@ addCustomer (customer: ICustomer): Observable<ICustomer> {
             headers: httpHeaders,
             observe: 'response'
         }
-    );
+    )
+    ;
     
   }
 

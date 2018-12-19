@@ -6,6 +6,8 @@ export interface ICustomer {
     firstName: string;
     lastName: string;
     gender: string;
+    username: string;
+    password: string;
    
 }
 

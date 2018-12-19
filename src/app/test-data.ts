@@ -4,6 +4,8 @@ export class TestData implements InMemoryDbService {
   createDb() {
     let articleDetails = [{
       "id": 1,
+      "username": "test",
+      "password": "test",
       "firstName": "ted",
       "lastName": "james",
       "gender": "male",
@@ -27,6 +29,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 2,
+      "username": "test",
+      "password": "test",
       "firstName": "Michelle",
       "lastName": "Thompson",
       "gender": "female",
@@ -50,6 +54,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 3,
+      "username": "test",
+      "password": "test",
       "firstName": "Zed",
       "lastName": "Bishop",
       "gender": "male",
@@ -77,6 +83,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 4,
+      "username": "test",
+      "password": "test",
       "firstName": "Tina",
       "lastName": "Adams",
       "gender": "female",
@@ -100,6 +108,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 5,
+      "username": "test",
+      "password": "test",
       "firstName": "Igor",
       "lastName": "Minar",
       "gender": "male",
@@ -123,6 +133,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 6,
+      "username": "test",
+      "password": "test",
       "firstName": "Brad",
       "lastName": "Green",
       "gender": "male",
@@ -146,6 +158,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 7,
+      "username": "test",
+      "password": "test",
       "firstName": "Misko",
       "lastName": "Hevery",
       "gender": "male",
@@ -173,6 +187,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 8,
+      "username": "test",
+      "password": "test",
       "firstName": "Heedy",
       "lastName": "Wahlin",
       "gender": "female",
@@ -196,6 +212,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 9,
+      "username": "test",
+      "password": "test",
       "firstName": "John",
       "lastName": "Papa",
       "gender": "male",
@@ -219,6 +237,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 10,
+      "username": "test",
+      "password": "test",
       "firstName": "Tonya",
       "lastName": "Smith",
       "gender": "female",
@@ -246,6 +266,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 11,
+      "username": "test",
+      "password": "test",
       "firstName": "ward",
       "lastName": "bell",
       "gender": "male",
@@ -260,6 +282,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 12,
+      "username": "test",
+      "password": "test",
       "firstName": "Marcus",
       "lastName": "Hightower",
       "gender": "male",
@@ -274,6 +298,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 13,
+      "username": "test",
+      "password": "test",
       "firstName": "Thomas",
       "lastName": "Martin",
       "gender": "male",
@@ -301,6 +327,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 14,
+      "username": "test",
+      "password": "test",
       "firstName": "Jean",
       "lastName": "Martin",
       "gender": "female",
@@ -315,6 +343,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 15,
+      "username": "test",
+      "password": "test",
       "firstName": "Pinal",
       "lastName": "Dave",
       "gender": "male",
@@ -329,6 +359,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 16,
+      "username": "test",
+      "password": "test",
       "firstName": "Robin",
       "lastName": "Cleark",
       "gender": "female",
@@ -343,6 +375,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 17,
+      "username": "test",
+      "password": "test",
       "firstName": "Fred",
       "lastName": "Roberts",
       "gender": "male",
@@ -357,6 +391,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 18,
+      "username": "test",
+      "password": "test",
       "firstName": "Robyn",
       "lastName": "Flores",
       "gender": "female",
@@ -371,6 +407,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 19,
+      "username": "test",
+      "password": "test",
       "firstName": "Elaine",
       "lastName": "Jones",
       "gender": "female",
@@ -385,6 +423,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 20,
+      "username": "test",
+      "password": "test",
       "firstName": "Lilija",
       "lastName": "Arnarson",
       "gender": "female",
@@ -399,6 +439,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 21,
+      "username": "test",
+      "password": "test",
       "firstName": "Laurent",
       "lastName": "Bugnion",
       "gender": "male",
@@ -422,6 +464,8 @@ export class TestData implements InMemoryDbService {
     },
     {
       "id": 22,
+      "username": "test",
+      "password": "test",
       "firstName": "Gabriel",
       "lastName": "Flores",
       "gender": "male",

@@ -55,7 +55,7 @@ export class MembersComponent implements OnInit {
   createCustomer(customer: ICustomer) {
     this.dataService.createCustomer(customer).subscribe(customer => {
       console.log(customer);
-      this.loadCustomers();
+      //this.loadCustomers();
     },
     catchError(this.handleError)
     )
