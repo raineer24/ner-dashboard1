@@ -27,7 +27,8 @@ export class MembersComponent implements OnInit {
   country: any;
   address:any;
   gender:any;
-  customer: any;
+  user: any = {};
+  customer: ICustomer[];
   allCustomers$: Observable<ICustomer[]>;
   private customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
   constructor(private dataService: DataService, private http: HttpClient, private formBuilder:FormBuilder) { }
@@ -35,7 +36,8 @@ export class MembersComponent implements OnInit {
   ngOnInit() {
 
     this.customerForm = this.formBuilder.group({
-      firstName: ['', Validators.compose([Validators.required]) ]
+      firstName: ['', Validators.compose([Validators.required]) ],
+      username: ['', Validators.compose([Validators.required]) ]
     });
     
    
@@ -47,41 +49,56 @@ export class MembersComponent implements OnInit {
   onFormSubmit() {
     this.dataSaved = false;
     let customer = this.customerForm.value;
-    this.dataService.getCustomers().subscribe((icustomers) => {
-     this.createCustomer(customer);
-    });
+    console.log(customer);
+    const data = {
+     'username': customer.username,
+     'password': customer.password
+    }
+    // this.dataService.getCustomers().subscribe((icustomers) => {
+    //  this.createCustomer(data);
+    // });
+    this.dataService.createCustomer(data).subscribe(customer => {
+        console.log(this.customer);
+    }, catchError(this.handleError))
   }
 
-  createCustomer(customer: ICustomer) {
-    this.dataService.createCustomer(customer).subscribe(customer => {
-      console.log(customer);
-      //this.loadCustomers();
-    },
-    catchError(this.handleError)
-    )
-  }
+  // createCustomer(data) {
+  //   let customer = this.customerForm.value;
+  //   const data = {
+  //     'userName': customer.username,
+  //     'password': customer.password
+  //    }
+  //   this.dataService.createCustomer(data).subscribe(customer => {
+  //     console.log(customer);
+  //     this.loadCustomers();
+  //   },
+  //   catchError(this.handleError)
+  //   )
+  // }
   
   get f() {
     return this.customerForm.controls;
   }
 
-  saveCustomer() {
-    let customer: ICustomer;
-        this.dataService.postCustomer(this.customer).subscribe(res => {
-          let cstmr: ICustomer = res.body;
-          console.log(cstmr.id);
-          console.log(res.headers.get('Content-Type'));
-        },
-        (err: HttpErrorResponse) => {
-          if (err.error instanceof Error) {
-            // A client-side or network error occured.
-            console.log('An error occured:', err.error.message)
+//   saveCustomer() {
+//     let customer = {id: '2', title: 'Java Functional Interface',
+//     category: 'Java 8', writer: 'Krishna'};
+//         this.dataService.postCustomer(this.customer).subscribe(res => {
+//           let cstmr: ICustomer = res.body;
+//           console.log('saveCustomer');
+//           console.log(cstmr.id);
+//           console.log(res.headers.get('Content-Type'));
+//         },
+//         (err: HttpErrorResponse) => {
+//           if (err.error instanceof Error) {
+//             // A client-side or network error occured.
+//             console.log('An error occured:', err.error.message)
             
-          }
-        }
-        );
+//           }
+//         }
+//         );
   
-}
+// }
 
 loadCustomers() {
   this.allCustomers$ = this.dataService.getCustomers();

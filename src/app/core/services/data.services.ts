@@ -9,7 +9,7 @@ import { ICustomer } from '../../shared/interfaces';
 @Injectable()
 export class DataService {
     loginObject: ICustomer;
-    customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
+    //customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
     url = "/api/customers";
     
     constructor(private http: HttpClient) { }
@@ -33,13 +33,15 @@ export class DataService {
 
    
 
-    createCustomer(customer: ICustomer): Observable<ICustomer> {
+    createCustomer(data): Observable<ICustomer> {
+       // this.loginObject = { username: username, password: password};
         let httpHeaders = new HttpHeaders()
             .set('Content-Type', 'application/json');
         let options = {
             headers: httpHeaders
         };
-        return this.http.post<ICustomer>(this.url, customer, options);
+        
+        return this.http.post<ICustomer>(this.url,  options);
     }
 
     

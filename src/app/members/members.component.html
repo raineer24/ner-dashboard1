@@ -3,9 +3,9 @@
         <tr>
             <td>First Name: </td>
             <td>
-                <input type="text" formControlName="firstName" name="firstName" class="form-control" required>
-                <div *ngIf="f.firstName.errors" class="error"> 
-                    <div *ngIf="f.firstName.errors">
+                <input type="text" formControlName="username" name="username" class="form-control" required>
+                <div *ngIf="f.username.errors" class="error"> 
+                    <div *ngIf="f.username.errors">
                         Name required
                     </div>
                 </div>
@@ -13,13 +13,13 @@
         </tr>
         <tr>
             <td colspan="2">
-                <button [disabled]="customerForm.invalid">Submit</button>
+                <button >Submit</button>
           </td>
         </tr>
     </table>
 </form>
 <ul>
     <li *ngFor="let customer of allCustomers$ | async"> 
-        {{customer.firstName}}
+        {{customer.username}}
     </li>
 </ul>
