@@ -22,8 +22,9 @@ export class DataService {
         return this.http.get<ICustomer[]>(this.url)
         .pipe(
             map(customers => {
-               const user = localStorage.setItem('customers', JSON.stringify(customers));
-               console.log(user);
+               localStorage.setItem('customers', JSON.stringify(customers));
+               const users = JSON.parse(localStorage.getItem('customers'));
+               console.log(users);
                return customers;
             }),
             catchError(this.handleError)
@@ -41,7 +42,13 @@ export class DataService {
             headers: httpHeaders
         };
         
-        return this.http.post<ICustomer>(this.url,  options);
+        return this.http.post<ICustomer>(this.url,  options,).pipe(
+            map(data => {
+                console.log(data);
+                return data;
+            }),
+            catchError(this.handleError)
+        );
     }
 
     

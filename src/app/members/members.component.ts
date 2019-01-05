@@ -30,19 +30,20 @@ export class MembersComponent implements OnInit {
   user: any = {};
   customer: ICustomer[];
   allCustomers$: Observable<ICustomer[]>;
-  private customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
+  //private customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
   constructor(private dataService: DataService, private http: HttpClient, private formBuilder:FormBuilder) { }
 
   ngOnInit() {
 
     this.customerForm = this.formBuilder.group({
       firstName: ['', Validators.compose([Validators.required]) ],
-      username: ['', Validators.compose([Validators.required]) ]
+      username: ['', Validators.compose([Validators.required]) ],
+      password: ['', Validators.compose([Validators.required]) ]
     });
     
    
        //this.createCustomer();
-       this.saveCustomer();
+       //this.saveCustomer();
        
   }
 
@@ -58,7 +59,7 @@ export class MembersComponent implements OnInit {
     //  this.createCustomer(data);
     // });
     this.dataService.createCustomer(data).subscribe(customer => {
-        console.log(this.customer);
+      this.loadCustomers();
     }, catchError(this.handleError))
   }
 
