@@ -23,6 +23,17 @@
             </td>
         </tr>
         <tr>
+            <td>First Name: </td>
+            <td>
+                <input type="text" formControlName="firstName" name="firstName" class="form-control" required>
+                <div *ngIf="f.firstName.errors" class="error"> 
+                    <div *ngIf="f.firstName.errors">
+                        First Name required
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <button >Submit</button>
           </td>

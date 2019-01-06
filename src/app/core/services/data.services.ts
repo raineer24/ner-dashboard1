@@ -25,7 +25,7 @@ export class DataService {
                localStorage.setItem('customers', JSON.stringify(customers));
                const users = JSON.parse(localStorage.getItem('customers'));
                console.log(users);
-               return customers;
+               return users;
             }),
             catchError(this.handleError)
         )
@@ -42,8 +42,10 @@ export class DataService {
             headers: httpHeaders
         };
         
-        return this.http.post<ICustomer>(this.url,  options,).pipe(
+        return this.http.post<ICustomer>(this.url, data,  options).pipe(
             map(data => {
+                //localStorage.setItem('data', JSON.stringify(data));
+                //const datas = JSON.parse(localStorage.getItem('data'));
                 console.log(data);
                 return data;
             }),

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/services/data.services';
 import { ICustomer } from '../shared/interfaces';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { map, catchError } from 'rxjs/operators';
-
-
+//import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
@@ -30,6 +29,7 @@ export class MembersComponent implements OnInit {
   user: any = {};
   customer: ICustomer[];
   allCustomers$: Observable<ICustomer[]>;
+  loginSubs: Subscription;
   //private customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
   constructor(private dataService: DataService, private http: HttpClient, private formBuilder:FormBuilder) { }
 
@@ -53,14 +53,19 @@ export class MembersComponent implements OnInit {
     console.log(customer);
     const data = {
      'username': customer.username,
-     'password': customer.password
+     'password': customer.password,
+     'firstName': customer.firstName
     }
     // this.dataService.getCustomers().subscribe((icustomers) => {
     //  this.createCustomer(data);
     // });
-    this.dataService.createCustomer(data).subscribe(customer => {
-      this.loadCustomers();
-    }, catchError(this.handleError))
+    if (this.customerForm.valid) {
+     this.dataService.createCustomer(data).subscribe(customer => {
+        this.loadCustomers();
+        console.log(data);
+      }, catchError(this.handleError))
+    }
+   
   }
 
   // createCustomer(data) {
