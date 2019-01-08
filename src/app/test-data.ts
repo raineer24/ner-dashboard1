@@ -11,6 +11,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "1234 Anywhere St.",
       "city": " Phoenix ",
+      "token": "secret",
       "state": {
         "abbreviation": "AZ",
         "name": "Arizona"
@@ -36,6 +37,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "345 Cedar Point Ave.",
       "city": "Encinitas ",
+      "token": "secret",
       "state": {
         "abbreviation": "CA",
         "name": "California"
@@ -61,6 +63,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "1822 Long Bay Dr.",
       "city": " Seattle ",
+      "token": "secret",
       "state": {
         "abbreviation": "WA",
         "name": "Washington"
@@ -90,6 +93,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "79455 Pinetop Way",
       "city": "Chandler",
+      "token": "secret",
       "state": {
         "abbreviation": "AZ",
         "name": " Arizona "
@@ -115,6 +119,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "576 Crescent Blvd.",
       "city": " Dallas",
+      "token": "secret",
       "state": {
         "abbreviation": "TX",
         "name": "Texas"
@@ -140,6 +145,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "9874 Center St.",
       "city": "Orlando ",
+      "token": "secret",
       "state": {
         "abbreviation": "FL",
         "name": "Florida"
@@ -165,6 +171,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "9812 Builtway Appt #1",
       "city": "Carey ",
+      "token": "secret",
       "state": {
         "abbreviation": "NC",
         "name": "North Carolina"
@@ -194,6 +201,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "4651 Tuvo St.",
       "city": "Anaheim",
+      "token": "secret",
       "state": {
         "abbreviation": "CA",
         "name": "California"
@@ -219,6 +227,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "66 Ray St.",
       "city": " Orlando",
+      "token": "secret",
       "state": {
         "abbreviation": "FL",
         "name": "Florida"
@@ -244,6 +253,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "1455 Chandler Blvd.",
       "city": " Atlanta",
+      "token": "secret",
       "state": {
         "abbreviation": "GA",
         "name": "Georgia"
@@ -273,6 +283,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "888 Central St.",
       "city": "Los Angeles",
+      "token": "secret",
       "state": {
         "abbreviation": "CA",
         "name": "California"
@@ -289,6 +300,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "1699 Atomic St.",
       "city": "Dallas",
+      "token": "secret",
       "state": {
         "abbreviation": "TX",
         "name": "Texas"
@@ -305,6 +317,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "98756 Center St.",
       "city": "New York",
+      "token": "secret",
       "state": {
         "abbreviation": "NY",
         "name": "New York City"
@@ -334,6 +347,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "98756 Center St.",
       "city": "New York City",
+      "token": "secret",
       "state": {
         "abbreviation": "NY",
         "name": "New York"
@@ -350,6 +364,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "23566 Directive Pl.",
       "city": "White Plains",
+      "token": "secret",
       "state": {
         "abbreviation": "NY",
         "name": "New York"
@@ -366,6 +381,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "35632 Richmond Circle Apt B",
       "city": "Las Vegas",
+      "token": "secret",
       "state": {
         "abbreviation": "NV",
         "name": "Nevada"
@@ -382,6 +398,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "12 Ocean View St.",
       "city": "Houston",
+      "token": "secret",
       "state": {
         "abbreviation": "TX",
         "name": "Texas"
@@ -398,6 +415,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "23423 Adams St.",
       "city": "Seattle",
+      "token": "secret",
       "state": {
         "abbreviation": "WA",
         "name": "Washington"
@@ -414,6 +432,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "98756 Center St.",
       "city": "Barcelona",
+      "token": "secret",
       "state": {
         "abbreviation": "CAT",
         "name": "Catalonia"
@@ -430,6 +449,7 @@ export class TestData implements InMemoryDbService {
       "gender": "female",
       "address": "23423 Adams St.",
       "city": "Reykjavik",
+      "token": "secret",
       "state": {
         "abbreviation": "IS",
         "name": "Iceland"
@@ -446,6 +466,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "9874 Lake Blvd.",
       "city": "Zurich",
+      "token": "secret",
       "state": {
         "abbreviation": "COZ",
         "name": "Canton of Zurick"
@@ -471,6 +492,7 @@ export class TestData implements InMemoryDbService {
       "gender": "male",
       "address": "2543 Cassiano",
       "city": "Rio de Janeiro",
+      "token": "secret",
       "state": {
         "abbreviation": "WA",
         "name": "Rio de Janeiro"

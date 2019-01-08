@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules, NoPreloading } from '@angular/router';
-
+import { LoginComponent } from './login/login.component';
 //import { PreloadModulesStrategy } from './core/strategies/preload-modules.strategy';
 
 const app_routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/members' },
     { path: 'members', loadChildren: './members/members.module#MembersModule' },
+    { path: 'login', loadChildren: './login/login.module#LoginModule' },
     { path: '**', pathMatch: 'full', redirectTo: '/members' } // catch any unfound routes and redirect to home page
 ];
 

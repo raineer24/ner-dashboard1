@@ -4,16 +4,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataService } from 'src/app/core/services/data.services';
 //import { EnsureModuleLoadedOnceGuard } from './ensureModuleLoadedOnceGuard';
-import { AuthInterceptor } from './interceptors/auth.interceptor';
+//import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
     imports: [CommonModule, RouterModule, HttpClientModule, ],
     exports: [RouterModule, HttpClientModule, ],
-    providers: [DataService, {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptor,
-        multi: true,
-    }]
+    providers: [DataService,]
     
 })
 

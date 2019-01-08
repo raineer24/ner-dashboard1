@@ -24,8 +24,8 @@ export class DataService {
             map(customers => {
                localStorage.setItem('customers', JSON.stringify(customers));
                const users = JSON.parse(localStorage.getItem('customers'));
-               console.log(users);
-               return users;
+               //console.log(customers[0].token);
+               return customers;
             }),
             catchError(this.handleError)
         )
@@ -44,13 +44,23 @@ export class DataService {
         
         return this.http.post<ICustomer>(this.url, data,  options).pipe(
             map(data => {
-                //localStorage.setItem('data', JSON.stringify(data));
+                localStorage.setItem('data', JSON.stringify(data));
                 //const datas = JSON.parse(localStorage.getItem('data'));
+                console.log(data.token);
                 console.log(data);
                 return data;
             }),
             catchError(this.handleError)
         );
+    }
+
+    isAuthenticated(): boolean {
+        const userData = JSON.parse(localStorage.getItem('data'));
+        if(!userData) {
+            return false;
+        } else {
+            
+        }
     }
 
     
