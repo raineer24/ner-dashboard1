@@ -59,7 +59,7 @@ export class DataService {
         if(!userData) {
             return false;
         } else {
-            
+            console.log('what now?');
         }
     }
 

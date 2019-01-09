@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
     };
 
     if (this.loginForm.valid) {
-      console.log('correct!');
+      this.loginSubs = this.dataService.createCustomer(data).subscribe(res => {
+          console.log(res);
+      });
     }
   }
 
