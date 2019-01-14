@@ -43,23 +43,47 @@ export class DataService {
         };
         
         return this.http.post<ICustomer>(this.url, data,  options).pipe(
-            map(data => {
-                localStorage.setItem('data', JSON.stringify(data));
+            map(data1 => {
+                localStorage.setItem('data2', JSON.stringify(data));
                 //const datas = JSON.parse(localStorage.getItem('data'));
-                console.log(data.token);
-                console.log(data);
-                return data;
+                
+                console.log(data1);
+                return data1;
             }),
             catchError(this.handleError)
         );
     }
+    login(data): Observable<ICustomer> {
+        // this.loginObject = { username: username, password: password};
+         let httpHeaders = new HttpHeaders()
+             .set('Content-Type', 'application/json');
+         let options = {
+             headers: httpHeaders
+         };
+         
+         return this.http.post<ICustomer>(this.url, data,  options).pipe(
+             map(user => {
+                 this.loginObject = user;
+                 console.log(this.loginObject);
+                 localStorage.setItem('data2', JSON.stringify(data));
+                 //const datas = JSON.parse(localStorage.getItem('data'));
+                 
+                 //console.log(data1);
+                 return user;
+             }),
+             catchError(this.handleError)
+         );
+     }
 
     isAuthenticated(): boolean {
-        const userData = JSON.parse(localStorage.getItem('data'));
+        const userData = JSON.parse(localStorage.getItem('data2'));
+        console.log(userData);
         if(!userData) {
             return false;
         } else {
             console.log('what now?');
+            console.log(userData);
+            return true;
         }
     }
 

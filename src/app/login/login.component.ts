@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   returnUrl: string;
   loginSubs: Subscription;
+  error: string;
   constructor(private fb: FormBuilder, private dataService: DataService,   private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
@@ -33,9 +34,10 @@ export class LoginComponent implements OnInit {
     };
 
     if (this.loginForm.valid) {
-      this.loginSubs = this.dataService.createCustomer(data).subscribe(res => {
-          console.log(res);
-      });
+      this.loginSubs = this.dataService.login(data).subscribe(res => 
+        this.router.navigate(['/members']),
+       err => this.error = 'Could not authenticate'
+      );
     }
   }
 

@@ -11,7 +11,7 @@ const app_routes: Routes = [
     [AuthGuard] },
     { path: 'members', loadChildren: './members/members.module#MembersModule', canActivate: [AuthGuard] },
     { path: 'login', loadChildren: './login/login.module#LoginModule' },
-    { path: '**', pathMatch: 'full', redirectTo: '/members' } // catch any unfound routes and redirect to home page
+    { path: '**', pathMatch: 'full', redirectTo: '/' } // catch any unfound routes and redirect to home page
 ];
 
 @NgModule({
