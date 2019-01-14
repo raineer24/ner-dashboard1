@@ -30,18 +30,22 @@ export class MembersComponent implements OnInit {
   customer: ICustomer[];
   allCustomers$: Observable<ICustomer[]>;
   loginSubs: Subscription;
+  data: any;
   //private customersBaseUrl = 'http://localhost:4200/assets/data/customers.json';
   constructor(private dataService: DataService, private http: HttpClient, private formBuilder:FormBuilder) { }
 
   ngOnInit() {
 
-    this.customerForm = this.formBuilder.group({
-      firstName: ['', Validators.compose([Validators.required]) ],
-      username: ['', Validators.compose([Validators.required]) ],
-      password: ['', Validators.compose([Validators.required]) ]
-    });
+    // this.customerForm = this.formBuilder.group({
+    //   firstName: ['', Validators.compose([Validators.required]) ],
+    //   username: ['', Validators.compose([Validators.required]) ],
+    //   password: ['', Validators.compose([Validators.required]) ]
+    // });
     
-   
+    this.dataService.getCustomers().subscribe(customer => {
+      this.loadCustomers();
+      console.log(customer);
+    }
        //this.createCustomer();
        //this.saveCustomer();
        
