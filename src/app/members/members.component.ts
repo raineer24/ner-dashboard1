@@ -36,16 +36,12 @@ export class MembersComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.customerForm = this.formBuilder.group({
-    //   firstName: ['', Validators.compose([Validators.required]) ],
-    //   username: ['', Validators.compose([Validators.required]) ],
-    //   password: ['', Validators.compose([Validators.required]) ]
-    // });
-    
-    this.dataService.getCustomers().subscribe(customer => {
+ 
+    this.dataService.getCustomers().subscribe((customer) => {
       this.loadCustomers();
+      this.customer = customer;
       console.log(customer);
-    }
+    });
        //this.createCustomer();
        //this.saveCustomer();
        
